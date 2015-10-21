@@ -21,27 +21,52 @@ def refresh(file_path):
     else:
         _refresh()
 
-def munge(file_path):
-    # read in the latest source data
-    df = pd.read_csv(file_path).head(100000)
+def munge(historical_data, static_data):
+    # read in the sources
+    hdf = pd.read_csv(historical_data)
+    sdf = pd.read_csv(static_data)
 
     # renaming some funky columns
-    df.rename(
+    hdf.rename(
         columns = { "Date/Time": "DateTime", "Map Point": "MapPoint" },
         inplace = True
     )
 
-    # clean up the addresses to match the static data
-    df.Address = df.Address.replace(
+    sdf.rename(
+        columns = { "Total Spaces": "Total" },
+        inplace = True
+    )
+
+    # clean up addresses in historical data to match those in static data
+    hdf.Address = hdf.Address.replace(
         [r", Santa Monica", r"\.", r"\bSt\b", r"\sat 4th Street"],
         [               "",    "",  "Street",                 ""],
         regex = True
     )
 
+    # merge the DataFrames on the Address columns
+    # this is an 'inner join' => any Addresses missing in the static data
+    # will have their corresponding records removed
+    # then select out only the columns we are interested in
+    df = hdf.merge(sdf, on = "Address")[[
+        "DateTime",
+        "Lot",
+        "Address",
+        "Zip",
+        "Available",
+        "Total",
+        "Latitude",
+        "Longitude"
+    ]]
+
     # convert strings to datetime64[ns] objects
     df.DateTime = pd.to_datetime(df.DateTime, format = "%m/%d/%Y %H:%M:%S %p")
 
+    return df
+
 if __name__ == "__main__":
-    data_file = "./data.csv"
-    refresh(data_file)
-    munge(data_file)
+    historical_data = "./data.csv"
+    static_data = "./static.csv"
+
+    refresh(historical_data)
+    data = munge(historical_data, static_data)
