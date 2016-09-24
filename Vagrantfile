@@ -7,10 +7,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "data-science-toolbox/dst"
 
-  # Only check for updates when the user runs
-  # `vagrant box outdated`
-  config.vm.box_check_update = false
-
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8888" will access port 8888 on the guest machine.
@@ -26,11 +22,6 @@ Vagrant.configure("2") do |config|
     # customize the amount of memory on the VM
     vb.memory = "1024"
   end
-
-  # enable provisioning with a shell script.
-  # config.vm.provision "shell",
-  #   path: ".env/virtualenv.sh",
-  #   privileged: false
 
   # share this folder with the vm
   config.vm.synced_folder ".", "/home/vagrant/notebooks/lots-analysis"

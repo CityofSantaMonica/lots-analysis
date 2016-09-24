@@ -40,7 +40,7 @@ support Linux, OSX, and Windows.
 vagrant@data-science-toolbox:~$
 ```
 
-### Setup the ipython environment and run the notebook server
+### Setup environment and run the notebook server
 
 ```bash
 vagrant@data-science-toolbox:~$ dst setup base
@@ -50,5 +50,15 @@ vagrant@data-science-toolbox:~$ sudo ipython notebook --profile=dst
 ```
 
 Now you should be able to run the notebook in a browser (on the host machine):
-`https://localhost:8888/notebooks/lots-analysis/main.ipynb` using the password you
-provided above. You can safely ignore certificate warnings (the notebook server uses a self-signed cert.)
+[https://localhost:8888](https://localhost:8888) using the password you provided above.
+You can safely ignore certificate warnings (the notebook server uses a self-signed cert.)
+
+### Cleanup
+
+When you are finished, release any resources used by the vm
+
+```bash
+vagrant@data-science-toolbox:~$ logout
+...
+~/lots-analysis$ vagrant destroy
+```
