@@ -3,10 +3,10 @@ Structure 1,1234 4th Street,330,8,338,"First 90min Free , Next 1hr= $1, Addition
 Structure 2,1235 2nd Street,630,17,647,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",3,2
 Structure 3,1320 4th Street,323,8,339,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",4,2
 Structure 4,1321 2nd Street,639,12,652,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",4,2
-Structure 5,1431 4th Street,652,13,665,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",4,2
-Structure 6,1432 2nd Street,718,26,744,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",4,3
+Structure 5,1440 4th Street,652,13,665,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",4,2
+Structure 6,1431 2nd Street,718,26,744,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",4,3
 Structure 7,320 Broadway,794,26,820,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",6,4
-Structure 8,1555 2nd Street,1008,32,1040,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",7,4
+Structure 8,215 Colorado Ave,1008,32,1040,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",7,4
 Structure 9,1136 4th Street,287,7,294,"First 90min Free , Next 1hr= $1, Additional 30min = $1.50, Daily Max $14",1,1
 Structure 10,1125 3rd Street,76,6,82,"30 min $1, Additional 30 min $1.00, Daily max $14",3,
 Civic Center,333 Civic Center Dr,165,5,170,"First 30min Free , Additional 1hr = $1, Daily Max $5",2,2
